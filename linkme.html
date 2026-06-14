@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>DK | Dark Studios - الرابط الرسمي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 100%);
+            font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* خلفية متحركة خفيفة */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(100, 20, 20, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* الشعار المزخرف - DK */
+        .dk-logo {
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .dk-zakhrafa {
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff4444, #8b0000, #cc3333, #4a0000);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            letter-spacing: 6px;
+            animation: gradientShift 3s ease infinite, glow 2s ease-in-out infinite;
+        }
+
+        /* أنماط مزخرفة إضافية لـ DK */
+        .dk-style1 {
+            font-size: 56px;
+            font-weight: bold;
+            display: inline-block;
+            background: linear-gradient(45deg, #b33, #f66, #b33);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(180, 40, 40, 0.6);
+        }
+
+        .dk-style2 {
+            font-size: 60px;
+            font-weight: 800;
+            display: inline-block;
+            letter-spacing: 8px;
+            background: linear-gradient(135deg, #ff6666, #ff0000, #990000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 12px #ff0000aa);
+        }
+
+        /* النص المزخرف الصغير */
+        .decor-text {
+            font-size: 12px;
+            color: #aa6a6a;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            font-family: monospace;
+        }
+
+        .studio-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #dd9999;
+            margin: 10px 0 5px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            color: #aa7777;
+            font-size: 13px;
+            margin-bottom: 35px;
+            border-bottom: 1px dashed #552222;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        /* أزرار الروابط */
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(25, 18, 20, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid #6b2e2e;
+            border-radius: 70px;
+            padding: 14px 24px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #e05a5a;
+            background: #2a1818;
+            box-shadow: 0 12px 28px rgba(200, 40, 40, 0.3);
+        }
+
+        .link-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .link-icon {
+            font-size: 34px;
+            filter: drop-shadow(0 0 3px #b44);
+        }
+
+        .link-text {
+            text-align: left;
+        }
+
+        .link-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffe6e6;
+            letter-spacing: 1px;
+        }
+
+        .link-desc {
+            font-size: 12px;
+            color: #bc8a8a;
+            margin-top: 3px;
+        }
+
+        .arrow-symbol {
+            font-size: 28px;
+            color: #cc7777;
+            transition: transform 0.2s;
+        }
+
+        .link-card:hover .arrow-symbol {
+            transform: translateX(5px);
+            color: #ff9999;
+        }
+
+        /* فاصل زخرفي */
+        .divider {
+            margin: 30px 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .divider-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b33, transparent);
+        }
+
+        .divider-icon {
+            color: #a44;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 11px;
+            color: #6e4a4a;
+            border-top: 1px solid #2c1e1e;
+            padding-top: 22px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer a {
+            color: #aa6e6e;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer a:hover {
+            color: #e08888;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff3333aa; }
+            50% { text-shadow: 0 0 25px #ff6666ff; }
+            100% { text-shadow: 0 0 5px #ff3333aa; }
+        }
+
+        @media (max-width: 480px) {
+            .dk-zakhrafa { font-size: 48px; letter-spacing: 4px; }
+            .dk-style2 { font-size: 44px; }
+            .link-card { padding: 12px 18px; }
+            .link-title { font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- DK مزخرف بـ 3 أشكال مختلفة (اختار اللي يعجبك أو بدّل بينهم) -->
+        <div class="dk-logo">
+            <!-- الشكل الأول: ناري متحرك -->
+            <div class="dk-zakhrafa">🜨 𝕯 𝕶 🛜</div>
+            <!-- التعليق: تقدر تغير للأشكال الثانية تحت -->
+            <!-- 
+            <div class="dk-style1">|DK|</div> 
+            <div class="dk-style2">✧ 𝐃𝐊 ✧</div>
+            -->
+            <div class="decor-text">⚔️ DARK STUDIOS ⚔️</div>
+        </div>
+
+        <div class="studio-name">استوديو الرعب 🩸</div>
+        <div class="tagline">حيث يبدأ الخوف الحقيقي</div>
+
+        <!-- رابط إنستغرام -->
+        <a href="https://www.instagram.com/studio_dark2?igsh=cjVleHJycmJjM3k=" class="link-card" target="_blank" rel="noopener noreferrer">
+            <div class="link-left">
+                <span class="link-icon">📸</span>
+                <div class="link-text">
+                    <div class="link-title">إنستغرام</div>
+                    <div class="link-desc">خلف الكواليس | أخبار التطوير</div>
+                </div>
+            </div>
+            <div class="arrow-symbol">➜</div>
+        </a>
+
+        <!-- رابط تليجرام -->
+        <a href="https://t.me/studiodark2" class="link-card" target="_blank" rel="noopener noreferrer">
+            <div class="link-left">
+                <span class="link-icon">✈️</span>
+                <div class="link-text">
+                    <div class="link-title">تليجرام</div>
+                    <div class="link-desc">القناة الرسمية | مجتمع الرعب</div>
+                </div>
+            </div>
+            <div class="arrow-symbol">➜</div>
+        </a>
+
+        <!-- فاصل زخرفي -->
+        <div class="divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">✦ 𓃥 ✦</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- رابط اللعبة القادمة (اختياري - فاضي حالياً) -->
+        <a href="#" class="link-card" style="opacity:0.7; border-color:#4f2c2c; background:#1b1212;" target="_blank">
+            <div class="link-left">
+                <span class="link-icon">🎮</span>
+                <div class="link-text">
+                    <div class="link-title">اللعبة القادمة</div>
+                    <div class="link-desc">قريباً 🔜 | مشروع رعب AAA</div>
+                </div>
+            </div>
+            <div class="arrow-symbol">⏳</div>
+        </a>
+
+        <div class="footer">
+            <span>☠️ DARK STUDIOS ☠️</span>
+            <span>|</span>
+            <span>DK © 2025</span>
+            <span>|</span>
+            <a href="#">مشروع نيميسيس</a>
+        </div>
+    </div>
+</body>
+</html>
